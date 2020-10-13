@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: click227
+  password: click227
+  host: localhost
+  port: 5432
+  #min_messages: notice
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: demo_caching_redis_development
+
+test:
+  <<: *default
+  database: demo_caching_redis_test
